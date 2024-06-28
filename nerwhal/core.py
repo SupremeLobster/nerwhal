@@ -7,6 +7,7 @@ from typing import List
 import nerwhal.backends
 from nerwhal.combination_strategies import combine
 from nerwhal.backends.stanza_ner_backend import StanzaNerBackend
+from nerwhal.backends.flair_ner_backend import FlairNerBackend
 from nerwhal.tokenizer import Tokenizer
 from nerwhal.scorer import score_entities
 from nerwhal.types import Config, NamedEntity
@@ -37,7 +38,10 @@ class Analyzer:
         self.backends = {}
 
         if self.config.use_statistical_ner:
-            self.backends["stanza"] = StanzaNerBackend(self.config.language)
+            if self.config.use_flair_ner:
+                self.backends["flair"] = FlairNerBackend(self.config.flair_ner_model_path)
+            else:
+                self.backends["stanza"] = StanzaNerBackend(self.config.language)
 
         if self.config.load_integrated_recognizers:
             self._add_integrated_recognizers_to_config_recognizer_paths()

@@ -17,6 +17,7 @@ setup(
     install_requires=[
         "spacy>=2.3.2,<3.0.0",
         "stanza>=1.0.1,<1.1.0",
+        "flair==0.13.1",
         "torch>=1.3.0,<1.6.0",
         "flashtext>=2.7,<3.0",
         "pydantic>=1.0.0,<2.0.0",
