@@ -39,6 +39,8 @@ class Config:
         language: the language of the text; used for tokenization and statistical NER
         recognizer_paths: a list of paths that specify the (custom) recognizers to be used for recognition (optional)
         use_statistical_ner: whether to use statistical NER or not (optional)
+        use_flair_ner: whether to use Flair statistical NER or not (optional). If True, the Flair NER backend is used instead of the Stanza NER backend.
+        flair_ner_model_path: the path to the Flair NER model (optional)
         load_integrated_recognizers: whether to use all integrated recognizers for recognition (optional)
         context_word_confidence_boost_factor: the factor by which the score of named entities gets increased, if one of the
             context words is nearby (optional)
@@ -47,5 +49,7 @@ class Config:
     language: str
     recognizer_paths: Optional[List[str]] = field(default_factory=list)
     use_statistical_ner: Optional[bool] = False
+    use_flair_ner: Optional[bool] = False
+    flair_ner_model_path: Optional[str] = "pytorch_model.bin"
     load_integrated_recognizers: Optional[bool] = False
     context_word_confidence_boost_factor: Optional[float] = 1.2
