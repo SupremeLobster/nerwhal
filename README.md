@@ -12,7 +12,7 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Code style: Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/ambv/black)
 
-_**⚠️ Disclaimer ⚠️:**_ This is a prototype. Do not use for anything critical.
+_**Disclaimer :**_ This is a prototype. Do not use for anything critical.
 
 ## Description
 
